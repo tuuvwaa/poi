@@ -86,6 +86,7 @@ toggleButton.MouseButton1Click:Connect(function()
 end)
 
 -- Tạo các tab
+local ThongTinTab = Window:AddTab({ Title = "Thông Tin", Icon = "" })
 local MainTab = Window:AddTab({ Title = "Script Mới Nhất", Icon = "" })
 local PlayerTab = Window:AddTab({ Title = "Script Auto Bounty", Icon = "" })
 local IslandTab = Window:AddTab({ Title = "Script Fix Lag Vip", Icon = "" })
@@ -97,6 +98,18 @@ local PremiumTab = Window:AddTab({ Title = "Script Maru/Banana", Icon = "" })
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
 
+ThongTinTab:AddButton({
+    Title = "discord.gg/MkpDxJVTyb",
+    Description = "Nhấn để copy link Discord",
+    Callback = function()
+        setclipboard("https://discord.gg/MkpDxJVTyb")
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Thông báo",
+            Text = "Đã sao chép link Discord!",
+            Duration = 3
+        })
+    end
+})
 MainTab:AddButton({
     Title = "Redz Hub",
     Description = "",
@@ -221,18 +234,6 @@ MainTab:AddButton({
     Description = "Script Của Chủ Script",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/ScriptAnhTuanIOS/refs/heads/main/ScriptTuanAnhIOS.lua"))()
-    end
-})
-MainTab:AddButton({
-    Title = "discord.gg/MkpDxJVTyb",
-    Description = "Nhấn để copy link Discord",
-    Callback = function()
-        setclipboard("https://discord.gg/MkpDxJVTyb")
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "Thông báo",
-            Text = "Đã sao chép link Discord!",
-            Duration = 3
-        })
     end
 })
 
